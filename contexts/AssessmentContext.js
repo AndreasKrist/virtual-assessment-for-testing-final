@@ -10,11 +10,12 @@ export function useAssessment() {
 export function AssessmentProvider({ children }) {
   // User information
   const [biodata, setBiodata] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    ageGroup: '',
-  });
+  fullName: '',
+  email: '',
+  phone: '',
+  ageGroup: '',
+  consultant: '', // NEW: Add this line
+});
 
   // Selected role
   const [selectedRole, setSelectedRole] = useState(null);
@@ -357,11 +358,12 @@ export function AssessmentProvider({ children }) {
   // Reset the assessment to initial state
   const resetAssessment = () => {
     setBiodata({
-      fullName: '',
-      email: '',
-      phone: '',
-      ageGroup: '',
-    });
+    fullName: '',
+    email: '',
+    phone: '',
+    ageGroup: '',
+    consultant: '', // NEW: Add this line
+  });
     setSelectedRole(null);
     setStage('welcome');
     setCurrentBatch(0);
